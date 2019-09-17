@@ -13,8 +13,12 @@ class FeedViewController: UIViewController {
       workingRangeSize: 0)
     }()
     
+    let dataSource =  FeedAdapter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        adapter.collectionView = feedCollectionView
+        adapter.dataSource = dataSource
     }
-    
+
 }

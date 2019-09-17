@@ -23,6 +23,8 @@
 		D9B6C5FC217B4130924183CD /* libPods-photo-viewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D992FC1492ECFDA3E1FF922 /* libPods-photo-viewerUITests.a */; };
 		B5715C962330C6A80075086A /* FeedAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C952330C6A80075086A /* FeedAdapter.swift */; };
 		B5715C982330D9B50075086A /* PhontoSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C972330D9B50075086A /* PhontoSectionController.swift */; };
+		B5715C9A2330DEB20075086A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C992330DEB20075086A /* PhotoCell.swift */; };
+		B5715C9C2330DEE60075086A /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5715C9B2330DEE60075086A /* PhotoCell.xib */; };
 		F522FD6149E52883184F2F28 /* Pods_photo_viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4D1A1AEBE32BEB3590F370 /* Pods_photo_viewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		FE13975636E571563008F817 /* Pods-photo-viewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-viewerTests.release.xcconfig"; path = "Target Support Files/Pods-photo-viewerTests/Pods-photo-viewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5715C952330C6A80075086A /* FeedAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAdapter.swift; sourceTree = "<group>"; };
 		B5715C972330D9B50075086A /* PhontoSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhontoSectionController.swift; sourceTree = "<group>"; };
+		B5715C992330DEB20075086A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		B5715C9B2330DEE60075086A /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		C966DBF88901D4913E2429B4 /* Pods_photo_viewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_viewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D1A1AEBE32BEB3590F370 /* Pods_photo_viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +192,8 @@
 				B5715CA92332497A0075086A /* FeedInteractor.swift */,
 				B5715C952330C6A80075086A /* FeedAdapter.swift */,
 				B5715C972330D9B50075086A /* PhontoSectionController.swift */,
+				B5715C992330DEB20075086A /* PhotoCell.swift */,
+				B5715C9B2330DEE60075086A /* PhotoCell.xib */,
 			);
 			path = feed;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5715C9C2330DEE60075086A /* PhotoCell.xib in Resources */,
 				B5715C6B2330229C0075086A /* LaunchScreen.storyboard in Resources */,
 				B5715C682330229C0075086A /* Assets.xcassets in Resources */,
 				B5715C662330229A0075086A /* Main.storyboard in Resources */,
@@ -419,6 +426,7 @@
 				B5715C8F23302C400075086A /* FeedViewController.swift in Sources */,
 				B5715CA8233249620075086A /* FeedPresenter.swift in Sources */,
 				B5715C612330229A0075086A /* SceneDelegate.swift in Sources */,
+				B5715C9A2330DEB20075086A /* PhotoCell.swift in Sources */,
 				B5715C982330D9B50075086A /* PhontoSectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
