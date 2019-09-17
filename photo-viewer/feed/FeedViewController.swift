@@ -1,18 +1,20 @@
-//
-//  FeedViewController.swift
-//  photo-viewer
-//
-//  Created by prisa dumrongsiri on 16/9/2562 BE.
-//  Copyright © 2562 pd. All rights reserved.
-//
+
 import UIKit
+import IGListKit
 
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
+    lazy var adapter: ListAdapter = {
+      return ListAdapter(
+      updater: ListAdapterUpdater(),
+      viewController: self,
+      workingRangeSize: 0)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
 }
