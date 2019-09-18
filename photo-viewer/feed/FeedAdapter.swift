@@ -11,7 +11,7 @@ class FeedAdapter: NSObject, ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return PhotoSectionController()
+        return PhotoSectionController(photoViewModels: object as! PhotoViewModels)
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -20,22 +20,28 @@ class FeedAdapter: NSObject, ListAdapterDataSource {
     
 }
 
-
-public class PhotoViewModel: NSObject, ListDiffable {
-    let name: String
-    let url: String
+public class PhotoViewModels:NSObject, ListDiffable {
+    let photos: [PhotoViewModel]
     
-    init(name: String, url: String) {
-        self.name = name
-        self.url = url
+    init(photos: [PhotoViewModel]) {
+        self.photos = photos
     }
-    
     public func diffIdentifier() -> NSObjectProtocol {
         return self as NSObject
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         return true
+    }
+}
+
+public class PhotoViewModel: NSObject {
+    let name: String
+    let url: String
+    
+    init(name: String, url: String) {
+        self.name = name
+        self.url = url
     }
 
 }

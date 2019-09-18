@@ -10,9 +10,10 @@ class FeedInteractor: FeedInteractorInput {
 
     func fetchPhotoFeed() -> [Photo] {
         let photo1 = Photo(name: "image A",
-                           url: "https://images.forwardcdn.com/image/720x/center/images/cropped/axe-1531828722.jpg")
+                           url: "https://wallpaperbro.com/img/227839.jpg")
         
-        let photo2 = Photo(name: "image B", url: "https://www.independent.co.uk/travel/natural-wonders-travel-lifetime-beautiful-a7866261.html")
+        let photo2 = Photo(name: "image B",
+                           url:"https://wallpaperbro.com/img/227839.jpg")
         
         return [photo1, photo2, photo1, photo2, photo1, photo2, photo1, photo2, photo1, photo2]
     }

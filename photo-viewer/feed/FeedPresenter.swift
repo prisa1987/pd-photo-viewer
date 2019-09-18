@@ -2,14 +2,14 @@
 import Foundation
 
 protocol FeedViewOutput {
-    func fetchPhotoFeed() -> [PhotoViewModel]
+    func fetchPhotoFeed() -> PhotoViewModels
 }
 
 class FeedPresenter: FeedViewOutput {
     
     var interatorInput: FeedInteractorInput = FeedInteractor()
     
-    func fetchPhotoFeed() -> [PhotoViewModel] {
+    func fetchPhotoFeed() -> PhotoViewModels {
         let photos = interatorInput.fetchPhotoFeed()
         var photoViewModels = [PhotoViewModel]()
     
@@ -17,8 +17,9 @@ class FeedPresenter: FeedViewOutput {
             let viewModel = PhotoViewModel(name: photo.name, url: photo.url)
             photoViewModels.append(viewModel)
         }
-
-        return photoViewModels
+        
+    
+        return  PhotoViewModels(photos: photoViewModels)
     }
     
 }

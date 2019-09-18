@@ -24,7 +24,7 @@ class FeedViewController: UIViewController {
         
         adapter.collectionView = feedCollectionView
         adapter.dataSource = dataSource
-        dataSource.datas = feedViewOutput?.fetchPhotoFeed() ?? []
+        dataSource.datas = [feedViewOutput!.fetchPhotoFeed()]
         
         adapter.performUpdates(animated: true, completion: nil)
     }

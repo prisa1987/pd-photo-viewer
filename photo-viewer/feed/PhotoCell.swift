@@ -4,12 +4,9 @@ import Kingfisher
 
 class PhotoCell: UICollectionViewCell {
     
-    @IBOutlet weak var view: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
+    static var identifier: String = "PhotoCell"
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,9 +18,6 @@ class PhotoCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: size().width).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: size().height).isActive = true
-        let url = URL(string: "https://wallpaperbro.com/img/227839.jpg")
-        imageView.kf.setImage(with: url)
-        
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
     }
@@ -31,5 +25,11 @@ class PhotoCell: UICollectionViewCell {
     func size() -> CGSize {
         let width = (UIScreen.main.bounds.width - 12 - 4)/2
         return CGSize(width: width, height: width)
+    }
+    
+    func configure(object: CellViewModel) {
+        guard let cellViewModel = object as? PhotoCellViewModel else { return }
+        let url = URL(string:  cellViewModel.url)
+        imageView.kf.setImage(with: url)
     }
 }
