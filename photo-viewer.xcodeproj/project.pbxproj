@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		B5715C762330229C0075086A /* photo_viewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C752330229C0075086A /* photo_viewerTests.swift */; };
 		B5715C812330229C0075086A /* photo_viewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C802330229C0075086A /* photo_viewerUITests.swift */; };
 		B5715C8F23302C400075086A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C8E23302C400075086A /* FeedViewController.swift */; };
+		B5715CA8233249620075086A /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715CA7233249620075086A /* FeedPresenter.swift */; };
+		B5715CAA2332497A0075086A /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715CA92332497A0075086A /* FeedInteractor.swift */; };
 		C533259437ACAE947619D747 /* libPods-photo-viewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F66844665FA8C5577976455 /* libPods-photo-viewer.a */; };
 		D9B6C5FC217B4130924183CD /* libPods-photo-viewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D992FC1492ECFDA3E1FF922 /* libPods-photo-viewerUITests.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		B5715C802330229C0075086A /* photo_viewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_viewerUITests.swift; sourceTree = "<group>"; };
 		B5715C822330229C0075086A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5715C8E23302C400075086A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B5715CA7233249620075086A /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		B5715CA92332497A0075086A /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
 		ED45D5E75FFA08B9143DE8A0 /* Pods-photo-viewerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-viewerUITests.release.xcconfig"; path = "Target Support Files/Pods-photo-viewerUITests/Pods-photo-viewerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE13975636E571563008F817 /* Pods-photo-viewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-viewerTests.release.xcconfig"; path = "Target Support Files/Pods-photo-viewerTests/Pods-photo-viewerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				B5715C8E23302C400075086A /* FeedViewController.swift */,
+				B5715CA7233249620075086A /* FeedPresenter.swift */,
+				B5715CA92332497A0075086A /* FeedInteractor.swift */,
 			);
 			path = feed;
 			sourceTree = "<group>";
@@ -380,7 +386,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5715C5F2330229A0075086A /* AppDelegate.swift in Sources */,
+				B5715CAA2332497A0075086A /* FeedInteractor.swift in Sources */,
 				B5715C8F23302C400075086A /* FeedViewController.swift in Sources */,
+				B5715CA8233249620075086A /* FeedPresenter.swift in Sources */,
 				B5715C612330229A0075086A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

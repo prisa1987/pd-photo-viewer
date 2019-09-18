@@ -11,4 +11,8 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
