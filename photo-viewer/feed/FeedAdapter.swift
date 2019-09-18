@@ -4,8 +4,10 @@ import IGListKit
 
 class FeedAdapter: NSObject, ListAdapterDataSource {
     
+    public var datas = [ListDiffable]()
+
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [A()]
+        return datas
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -18,15 +20,22 @@ class FeedAdapter: NSObject, ListAdapterDataSource {
     
 }
 
-class A: NSObject, ListDiffable {
+
+public class PhotoViewModel: NSObject, ListDiffable {
+    let name: String
+    let url: String
     
-    func diffIdentifier() -> NSObjectProtocol {
+    init(name: String, url: String) {
+        self.name = name
+        self.url = url
+    }
+    
+    public func diffIdentifier() -> NSObjectProtocol {
         return self as NSObject
     }
     
-    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+    public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         return true
     }
-    
-    
+
 }

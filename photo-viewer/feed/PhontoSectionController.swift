@@ -9,14 +9,18 @@ class PhotoSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let cell = collectionContext!.dequeueReusableCell(withNibName: "PhotoCell",
+                                                          bundle: nil,
+                                                          for: self,
+                                                          at: index)
+        return (cell as? PhotoCell)?.size() ?? CGSize.zero
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        let cell = collectionContext!.dequeueReusableCell(of: PhotoCell.self,
-                                                         for: self,
-                                                         at: index)
-           
+        let cell = collectionContext!.dequeueReusableCell(withNibName: "PhotoCell",
+                                                          bundle: nil,
+                                                          for: self,
+                                                          at: index)
         return cell
     }
     

@@ -6,6 +6,8 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
+    var feedViewOutput: FeedPresenter? = FeedPresenter()
+    
     lazy var adapter: ListAdapter = {
       return ListAdapter(
       updater: ListAdapterUpdater(),
@@ -13,12 +15,18 @@ class FeedViewController: UIViewController {
       workingRangeSize: 0)
     }()
     
-    let dataSource =  FeedAdapter()
+    let dataSource = FeedAdapter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        feedCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        
         adapter.collectionView = feedCollectionView
         adapter.dataSource = dataSource
+        dataSource.datas = feedViewOutput?.fetchPhotoFeed() ?? []
+        
+        adapter.performUpdates(animated: true, completion: nil)
     }
 
 }
