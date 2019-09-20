@@ -6,7 +6,10 @@ class PhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var delegate: PhotoCellDelegate?
     static var identifier: String = "PhotoCell"
+    
+    var id: String?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -20,6 +23,10 @@ class PhotoCell: UICollectionViewCell {
         imageView.heightAnchor.constraint(equalToConstant: size().height).isActive = true
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(tapImage))
+        addGestureRecognizer(tapGesture)
     }
 
     func size() -> CGSize {
@@ -31,5 +38,19 @@ class PhotoCell: UICollectionViewCell {
         guard let cellViewModel = object as? PhotoCellViewModel else { return }
         let url = URL(string:  cellViewModel.url)
         imageView.kf.setImage(with: url)
+        id = cellViewModel.id
     }
+    
+    @objc func tapImage() {
+        print("s")
+
+        if let photoId = id {
+            delegate?.didTapPhoto(id: photoId)
+        }
+    }
+    
+}
+
+protocol PhotoCellDelegate {
+    func didTapPhoto(id: String)
 }

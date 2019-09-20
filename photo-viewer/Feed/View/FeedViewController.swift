@@ -2,7 +2,8 @@
 import UIKit
 import IGListKit
 
-class FeedViewController: UIViewController, FeedViewInput {
+class FeedViewController: UIViewController, FeedViewInput, PhotoCellDelegate {
+
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
@@ -19,6 +20,11 @@ class FeedViewController: UIViewController, FeedViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let navigationController = navigationController {
+            feedViewOutput?.router = FeedRouter(navigationController: navigationController, storyboard: storyboard)
+        }
+        dataSource.delegate = self
         feedViewOutput?.viewInput = self
         adapter.collectionView = feedCollectionView
         adapter.dataSource = dataSource
@@ -30,4 +36,8 @@ class FeedViewController: UIViewController, FeedViewInput {
         adapter.performUpdates(animated: true, completion: nil)
     }
     
+    // MARK: PhotoCellDelegate
+    func didTapPhoto(id: String) {
+        feedViewOutput?.didTapPhoto(id: id)
+    }
 }

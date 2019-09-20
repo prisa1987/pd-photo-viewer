@@ -16,6 +16,8 @@
 		B55627AD2333677A0095A5DC /* PhotoURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55627AC2333677A0095A5DC /* PhotoURLType.swift */; };
 		B55627AF23336BD40095A5DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55627AE23336BD40095A5DC /* User.swift */; };
 		B55627B4233370420095A5DC /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55627B3233370420095A5DC /* PhotoDetailViewController.swift */; };
+		B55627B623340C550095A5DC /* PhotoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55627B523340C550095A5DC /* PhotoDetailPresenter.swift */; };
+		B55627B82334B0320095A5DC /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55627B72334B0320095A5DC /* FeedRouter.swift */; };
 		B5715C5F2330229A0075086A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C5E2330229A0075086A /* AppDelegate.swift */; };
 		B5715C612330229A0075086A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5715C602330229A0075086A /* SceneDelegate.swift */; };
 		B5715C662330229A0075086A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5715C642330229A0075086A /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		B55627AC2333677A0095A5DC /* PhotoURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURLType.swift; sourceTree = "<group>"; };
 		B55627AE23336BD40095A5DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B55627B3233370420095A5DC /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		B55627B523340C550095A5DC /* PhotoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailPresenter.swift; sourceTree = "<group>"; };
+		B55627B72334B0320095A5DC /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
 		B5715C5B2330229A0075086A /* photo-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5715C5E2330229A0075086A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5715C602330229A0075086A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				B55627B3233370420095A5DC /* PhotoDetailViewController.swift */,
+				B55627B523340C550095A5DC /* PhotoDetailPresenter.swift */,
 			);
 			path = PhotoDetail;
 			sourceTree = "<group>";
@@ -208,11 +213,11 @@
 		B5715C5D2330229A0075086A /* photo-viewer */ = {
 			isa = PBXGroup;
 			children = (
-				B55627B22333702C0095A5DC /* PhotoDetail */,
 				B5715C5E2330229A0075086A /* AppDelegate.swift */,
 				B5715C672330229C0075086A /* Assets.xcassets */,
 				B51A37552332D23200AC58F1 /* CellViewModel.swift */,
 				B55627A9233367050095A5DC /* Extension */,
+				B55627B22333702C0095A5DC /* PhotoDetail */,
 				B5715C9023302C4B0075086A /* Feed */,
 				B5715C6C2330229C0075086A /* Info.plist */,
 				B5715C692330229C0075086A /* LaunchScreen.storyboard */,
@@ -248,6 +253,7 @@
 				B55627B023336E990095A5DC /* View */,
 				B5715CA7233249620075086A /* FeedPresenter.swift */,
 				B5715CA92332497A0075086A /* FeedInteractor.swift */,
+				B55627B72334B0320095A5DC /* FeedRouter.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -505,6 +511,8 @@
 				B55627AF23336BD40095A5DC /* User.swift in Sources */,
 				B5715CA8233249620075086A /* FeedPresenter.swift in Sources */,
 				B55627AD2333677A0095A5DC /* PhotoURLType.swift in Sources */,
+				B55627B623340C550095A5DC /* PhotoDetailPresenter.swift in Sources */,
+				B55627B82334B0320095A5DC /* FeedRouter.swift in Sources */,
 				B5715C612330229A0075086A /* SceneDelegate.swift in Sources */,
 				B51A37582332D44F00AC58F1 /* PhotoCellViewModel.swift in Sources */,
 				B55627A82332EF150095A5DC /* URL+.swift in Sources */,

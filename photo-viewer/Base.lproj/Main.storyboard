@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PX9-xK-ZJv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ss4-M4-ghT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-lR-Foq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-lR-Foq">
+                                <rect key="frame" x="51" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gh8-IS-5cn">
                                     <size key="itemSize" width="50" height="50"/>
@@ -33,11 +33,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <connections>
-                                            <segue destination="vj5-vl-qWE" kind="popoverPresentation" popoverAnchorView="2FC-mF-ZBB" id="o7l-YI-cE7">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -51,24 +46,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aAV-rs-Fk1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="t3Q-7e-9BV"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="fgG-lR-Foq" id="GK8-lq-aee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiY-28-5aH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-560"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="-560.49107142857144"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="fBN-dI-Kue">
             <objects>
-                <viewController id="vj5-vl-qWE" customClass="PhotoDetailViewController" customModule="photo_viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="vj5-vl-qWE" customClass="PhotoDetailViewController" customModule="photo_viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Su0-ke-7jc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am3-S8-9P8" userLabel="Profile View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S3-cJ-DXI" userLabel="name">
                                         <rect key="frame" x="12" y="0.0" width="390" height="60"/>
@@ -87,13 +83,13 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-ZN-HES">
-                                <rect key="frame" x="0.0" y="60" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="vbI-Xq-Hql"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1d-44-yyk">
-                                <rect key="frame" x="0.0" y="560" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="604" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-4a-gEP" userLabel="description">
                                         <rect key="frame" x="12" y="0.0" width="390" height="60"/>
@@ -126,10 +122,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0r0-D5-hG5"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="mPn-ZN-HES" id="q6w-gD-Ngp"/>
+                        <outlet property="profileLable" destination="ho5-4a-gEP" id="VvT-VC-xOE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOe-FN-twq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="-560"/>
+            <point key="canvasLocation" x="1844.9275362318842" y="-560.49107142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4GO-0R-XG2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ss4-M4-ghT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gHV-6e-KfO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tbk-tb-0ZM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PX9-xK-ZJv" kind="relationship" relationship="rootViewController" id="GZT-ei-oe0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xjK-Oq-d3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="-560.49107142857144"/>
         </scene>
     </scenes>
 </document>
