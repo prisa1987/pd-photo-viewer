@@ -38,12 +38,10 @@ public class PhotoViewModels:NSObject, ListDiffable {
 
 public class PhotoViewModel: NSObject {
     let id: String
-    let name: String
     let url: String
     
-    init(id: String, name: String, url: String) {
+    init(id: String, url: String) {
         self.id = id
-        self.name = name
         self.url = url
     }
 

@@ -15,4 +15,5 @@ class PhotoDetailPresenter: PhotoDetailViewOutput {
         guard let photo = photo else { return }
         viewIntput?.showPhotoDetail(photo: photo)
     }
+
 }

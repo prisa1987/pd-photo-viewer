@@ -12,8 +12,10 @@ class FeedRouter {
     }
     
     func goToPhotoDetail(photo: Photo) {
-        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "PhotoDetailViewController") as? PhotoDetailViewController else { return }
-        navigationController.pushViewController(detailViewController, animated: true)
+        
+        let builder = PhotoDetailModuleBuilder(storyboard: storyboard)
+        guard let photoDetailViewController = builder.build(photo: photo) else { return }
+        navigationController.pushViewController(photoDetailViewController, animated: true)
     }
     
 }
