@@ -1,18 +1,22 @@
 
 import Foundation
 
-
-class PhotoDetailPresenter: PhotoDetailViewOutput {
+class PhotoDetailPresenter: PhotoDetailViewOutput, PhotoDetailInteractorOutput {
     
     weak var viewIntput: PhotoDetailViewInput?
-    
-    let photo: Photo?
-    init(photo: Photo?) {
-        self.photo = photo
+    var interactorInput: PhotoDetailInteractorInput?
+    var photoId: String? = nil
+
+    func viewDidLoad() {
+        guard let id = photoId else { return }
+        fetchPhotoDetail(id: id)
+    }
+
+    func fetchPhotoDetail(id: String) {
+        interactorInput?.fetchPhotoDetail(id: id)
     }
     
-    func fetchPhotoDetail() {
-        guard let photo = photo else { return }
+    func didUpdatePhotoDetail(photo: Photo) {
         viewIntput?.showPhotoDetail(photo: photo)
     }
 

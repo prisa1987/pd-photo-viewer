@@ -1,34 +1,24 @@
 
 import Foundation
 
-protocol FeedInteractorInput: class {
-    func fetchPhotoFeed()
-    func getPhotos() -> [Photo]
-    func getPhoto(id: String) -> Photo?
-}
-
-protocol FeedInteractorOut: class {
-    func didUpdatePhotos(photos: [Photo])
-}
-
 class FeedInteractor: FeedInteractorInput {
     
-    let networking = WebServices()
-    weak var presenter: FeedInteractorOut?
+    let repository: FeedRepository
+    weak var interactorOutput: FeedInteractorOutput?
     private var photos = [Photo]()
     
+    init(repository: FeedRepository) {
+        self.repository = repository
+    }
+
     func fetchPhotoFeed() {
-        networking.performNetworkTask(
-            endpoint: .photos,
-            type: [Photo].self
-        ){ [weak self] (response) in
-            
+        repository.callPhotoFeed { [weak self] (response) in
             DispatchQueue.main.async {
                 self?.photos = response
-                self?.presenter?.didUpdatePhotos(photos: response)
-            }
-            
-        }}
+                self?.interactorOutput?.didUpdatePhotos(photos:response)
+            }   
+        }
+    }
     
     func getPhotos() -> [Photo] {
         return photos

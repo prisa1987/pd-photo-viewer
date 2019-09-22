@@ -30,7 +30,9 @@ class PhotoCell: UICollectionViewCell {
     }
 
     func size() -> CGSize {
-        let width = (UIScreen.main.bounds.width - 12 - 4)/2
+        let leftRightPadding: CGFloat = 12*2
+        let space: CGFloat = 4
+        let width = (UIScreen.main.bounds.width - leftRightPadding - space)/2
         return CGSize(width: width, height: width)
     }
     
@@ -42,8 +44,6 @@ class PhotoCell: UICollectionViewCell {
     }
     
     @objc func tapImage() {
-        print("s")
-
         if let photoId = id {
             delegate?.didTapPhoto(id: photoId)
         }

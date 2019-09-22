@@ -1,24 +1,18 @@
 
 import Foundation
 
-protocol FeedViewOutput {
-    func fetchPhotoFeed()
-    func didTapPhoto(id: String)
-}
+class FeedPresenter: FeedViewOutput, FeedInteractorOutput {
 
-protocol FeedViewInput: class {
-    func updateFeedView(photoViewModels: PhotoViewModels)
-}
-
-class FeedPresenter: FeedViewOutput, FeedInteractorOut {
-
-    var interatorInput: FeedInteractorInput = FeedInteractor()
+    var interactorInput: FeedInteractorInput?
     weak var viewInput: FeedViewInput?
     var router: FeedRouter?
     
+    func viewDidLoad() {
+        fetchPhotoFeed()
+    }
+
     func fetchPhotoFeed() {
-        (interatorInput as? FeedInteractor)?.presenter = self
-        interatorInput.fetchPhotoFeed()
+        interactorInput?.fetchPhotoFeed()
     }
     
     func didUpdatePhotos(photos: [Photo]) {
@@ -37,7 +31,7 @@ class FeedPresenter: FeedViewOutput, FeedInteractorOut {
     
     // MARK: Navigation
     func didTapPhoto(id: String) {
-        guard let photo = interatorInput.getPhoto(id: id) else { return }
+        guard let photo = interactorInput?.getPhoto(id: id) else { return }
         router?.goToPhotoDetail(photo: photo)
     }
 

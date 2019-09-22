@@ -4,16 +4,14 @@ import UIKit
 class FeedRouter {
     
     let navigationController: UINavigationController
-    let storyboard: UIStoryboard?
 
-    init(navigationController: UINavigationController, storyboard: UIStoryboard?) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.storyboard = storyboard
     }
     
     func goToPhotoDetail(photo: Photo) {
         
-        let builder = PhotoDetailModuleBuilder(storyboard: storyboard)
+        let builder = PhotoDetailModuleBuilder()
         guard let photoDetailViewController = builder.build(photo: photo) else { return }
         navigationController.pushViewController(photoDetailViewController, animated: true)
     }

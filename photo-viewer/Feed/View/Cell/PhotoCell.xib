@@ -16,15 +16,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="368" height="162"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROs-mV-rlg">
+                        <rect key="frame" x="0.0" y="0.0" width="368" height="162"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-Cc-dWO">
                         <rect key="frame" x="4" y="5" width="360" height="152"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ROs-mV-rlg" secondAttribute="bottom" id="2Df-yH-WpV"/>
                     <constraint firstAttribute="trailing" secondItem="nSa-Cc-dWO" secondAttribute="trailing" constant="4" id="2IZ-hy-PKl"/>
+                    <constraint firstItem="ROs-mV-rlg" firstAttribute="top" secondItem="Nxh-gu-pbA" secondAttribute="top" id="4x3-AI-DWS"/>
                     <constraint firstItem="nSa-Cc-dWO" firstAttribute="top" secondItem="Nxh-gu-pbA" secondAttribute="top" constant="5" id="59T-gt-AoD"/>
+                    <constraint firstAttribute="trailing" secondItem="ROs-mV-rlg" secondAttribute="trailing" id="9f6-zv-Frb"/>
                     <constraint firstItem="nSa-Cc-dWO" firstAttribute="leading" secondItem="Nxh-gu-pbA" secondAttribute="leading" constant="4" id="NaA-90-hsg"/>
+                    <constraint firstItem="ROs-mV-rlg" firstAttribute="leading" secondItem="Nxh-gu-pbA" secondAttribute="leading" id="mFM-ur-Ga9"/>
                     <constraint firstAttribute="bottom" secondItem="nSa-Cc-dWO" secondAttribute="bottom" constant="5" id="n5Q-7N-ncn"/>
                 </constraints>
             </collectionViewCellContentView>
