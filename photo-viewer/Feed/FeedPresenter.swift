@@ -21,7 +21,7 @@ class FeedPresenter: FeedViewOutput, FeedInteractorOutput {
         for photo in photos {
             let viewModel = PhotoViewModel(
                 id: photo.id,
-                url: photo.url?.raw ?? ""
+                url: photo.url?.full ?? ""
             )
             photoViewModels.append(viewModel)
         }
