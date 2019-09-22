@@ -36,8 +36,7 @@ class PhotoCell: UICollectionViewCell {
         return CGSize(width: width, height: width)
     }
     
-    func configure(object: CellViewModel) {
-        guard let cellViewModel = object as? PhotoCellViewModel else { return }
+    func configure(cellViewModel: PhotoCellViewModel) {
         let url = URL(string:  cellViewModel.url)
         imageView.kf.setImage(with: url)
         id = cellViewModel.id
