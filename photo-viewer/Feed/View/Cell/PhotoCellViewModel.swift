@@ -2,12 +2,12 @@
 import Foundation
 
 class PhotoCellViewModel: CellViewModel {
-    
-    let name: String
+
+    let id: String
     let url: String
     
-    init(name: String, url: String) {
-        self.name = name
+    init(id: String, url: String) {
+        self.id = id
         self.url = url
     }
 }

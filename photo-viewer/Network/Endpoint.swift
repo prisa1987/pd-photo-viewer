@@ -10,7 +10,7 @@ protocol EndpointType {
 
 enum UnsplashAPI {
     case photos
-
+    case photo(String)
 }
 
 extension UnsplashAPI: EndpointType {
@@ -22,6 +22,8 @@ extension UnsplashAPI: EndpointType {
         switch self {
         case .photos:
             return "photos"
+        case .photo(let id):
+            return "photos/" + id
         }
     }
 }

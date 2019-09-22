@@ -4,6 +4,7 @@ import IGListKit
 
 class FeedAdapter: NSObject, ListAdapterDataSource {
     
+    var delegate: PhotoCellDelegate?
     public var datas = [ListDiffable]()
 
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
@@ -11,7 +12,7 @@ class FeedAdapter: NSObject, ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return PhotoSectionController(photoViewModels: object as! PhotoViewModels)
+        return PhotoSectionController(photoViewModels: object as! PhotoViewModels, delegate: delegate)
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -36,11 +37,11 @@ public class PhotoViewModels:NSObject, ListDiffable {
 }
 
 public class PhotoViewModel: NSObject {
-    let name: String
+    let id: String
     let url: String
     
-    init(name: String, url: String) {
-        self.name = name
+    init(id: String, url: String) {
+        self.id = id
         self.url = url
     }
 
