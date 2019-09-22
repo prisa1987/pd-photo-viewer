@@ -2,7 +2,7 @@
 import UIKit
 import IGListKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, FeedViewInput {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
@@ -19,14 +19,15 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        feedCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
-        
+        feedViewOutput?.viewInput = self
         adapter.collectionView = feedCollectionView
         adapter.dataSource = dataSource
-        dataSource.datas = [feedViewOutput!.fetchPhotoFeed()]
-        
-        adapter.performUpdates(animated: true, completion: nil)
+        feedViewOutput?.fetchPhotoFeed()
     }
 
+    func updateFeedView(photoViewModels: PhotoViewModels) {
+        dataSource.datas = [photoViewModels]
+        adapter.performUpdates(animated: true, completion: nil)
+    }
+    
 }
