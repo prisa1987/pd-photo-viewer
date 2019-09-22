@@ -27,7 +27,7 @@ class PhotoSectionController: ListSectionController {
         let photo = photoViewModels.photos[index]
         let cellViewModel = PhotoCellViewModel(id: photo.id,
                                                url: photo.url)
-        (cell as? PhotoCell)?.configure(object: cellViewModel)
+        (cell as? PhotoCell)?.configure(cellViewModel: cellViewModel)
         (cell as? PhotoCell)?.delegate = delegate
         return cell
     }

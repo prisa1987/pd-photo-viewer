@@ -1,7 +1,7 @@
 
 import Foundation
 
-class PhotoCellViewModel: CellViewModel {
+class PhotoCellViewModel {
 
     let id: String
     let url: String
