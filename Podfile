@@ -3,8 +3,9 @@
 
 target 'photo-viewer' do
   # Comment the next line if you don't want to use dynamic frameworks
-  #use_frameworks!
+  use_frameworks!
   pod 'IGListKit', '~> 3.4.0'
+  pod 'Kingfisher', '~> 5.0'
 
   # Pods for photo-viewer
 

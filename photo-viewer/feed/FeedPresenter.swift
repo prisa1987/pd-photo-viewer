@@ -2,15 +2,25 @@
 import Foundation
 
 protocol FeedViewOutput {
-    func fetchPhotoFeed()
+    func fetchPhotoFeed() -> PhotoViewModels
 }
 
 class FeedPresenter: FeedViewOutput {
     
-    weak var interatorInput: FeedInteractorInput?
+    var interatorInput: FeedInteractorInput = FeedInteractor()
     
-    func fetchPhotoFeed() {
-        let photos = interatorInput?.fetchPhotoFeed()
+    func fetchPhotoFeed() -> PhotoViewModels {
+        let photos = interatorInput.fetchPhotoFeed()
+        var photoViewModels = [PhotoViewModel]()
+    
+        for photo in photos {
+            let viewModel = PhotoViewModel(name: photo.name, url: photo.url)
+            photoViewModels.append(viewModel)
+        }
+        
+    
+        return  PhotoViewModels(photos: photoViewModels)
     }
     
 }
+
